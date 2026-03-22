@@ -72,6 +72,25 @@
         margin-top: 20px;
         font-weight: bold;
     }
+
+    #foto {
+        margin-top: 20px;
+        width: 260px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    #cuentaRegresiva {
+        font-size: 26px;
+        color: #d84315;
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #bf360c;
+        margin-top: 20px;
+        font-weight: bold;
+    }
 </style>
 </head>
 <body>
@@ -90,6 +109,10 @@ para recordarte cuánto te amo y que sepas que no se me paso el darte tus flores
 </p>
 
 <button onclick="mostrarMensaje()">Haz clic aquí ❤️</button>
+
+<div id="cuentaRegresiva">La sorpresa aparece en: 10</div>
+
+<img id="foto" src="foto.jpg" alt="Nuestra foto" style="display:none;">
 
 <div id="mensaje"></div>
 
@@ -116,6 +139,22 @@ function crearFlor() {
 }
 
 setInterval(crearFlor, 200);
+
+// Cuenta regresiva
+let tiempo = 10;
+const contador = document.getElementById("cuentaRegresiva");
+const foto = document.getElementById("foto");
+
+const intervalo = setInterval(() => {
+    tiempo--;
+    contador.innerHTML = "La sorpresa aparece en: " + tiempo;
+
+    if (tiempo <= 0) {
+        clearInterval(intervalo);
+        contador.innerHTML = "💛 Para el amor de mi vida 💛";
+        foto.style.display = "block";
+    }
+}, 1000);
 </script>
 
 </body>
