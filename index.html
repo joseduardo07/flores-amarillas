@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Flores Amarillas para  el amor de mi vida María Fernanda</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom, #fffde7, #ffe082);
+        text-align: center;
+    }
+
+    h1 {
+        color: #f57f17;
+        font-size: 42px;
+        margin-top: 40px;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    p {
+        font-size: 22px;
+        color: #6d4c41;
+        width: 80%;
+        margin: auto;
+        animation: fadeIn 4s ease-in-out;
+    }
+
+    .flower {
+        position: absolute;
+        font-size: 40px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(-10vh);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 14px 24px;
+        font-size: 18px;
+        border: none;
+        border-radius: 12px;
+        background-color: #fdd835;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #fbc02d;
+        transform: scale(1.05);
+    }
+
+    #mensaje {
+        font-size: 24px;
+        color: #bf360c;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>🌻 Para ti, María Fernanda 🌻</h1>
+
+<p>
+Hoy quiero regalarte muchas flores amarillas, 
+porque iluminan tu sonrisa y llenan mi vida de alegría. 
+
+Eres una persona muy importante para mí, 
+y cada día a tu lado es tan especial.
+
+Estas flores son solo un pequeño detalle 
+para recordarte cuánto te amo y que sepas que no se me paso el darte tus flores. 💛
+</p>
+
+<button onclick="mostrarMensaje()">Haz clic aquí ❤️</button>
+
+<div id="mensaje"></div>
+
+<script>
+function mostrarMensaje() {
+    document.getElementById("mensaje").innerHTML =
+    "🌼 María Fernanda, eres lo mejor que me ha pasado. Te amo mucho. 🖤🌼";
+}
+
+function crearFlor() {
+    const flor = document.createElement("div");
+    flor.classList.add("flower");
+    flor.innerHTML = "🌼";
+
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    flor.style.fontSize = (Math.random() * 30 + 20) + "px";
+
+    document.body.appendChild(flor);
+
+    setTimeout(() => {
+        flor.remove();
+    }, 5000);
+}
+
+setInterval(crearFlor, 200);
+</script>
+
+</body>
+</html>
